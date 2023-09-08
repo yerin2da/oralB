@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오랄비</title>
+    <!-- 초기화 -->
+    <link rel="stylesheet" href="./css/reset.css" type="text/css">
+
+    <!-- 기본 css -->
+    <link rel="stylesheet" href="./css/base.css" type="text/css">
+
+    <!-- 메인 css -->
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+    <!-- 아이콘폰트 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css">
+
+    <!-- 접두사를 자동으로 붙여주는 스크립트 -->
+    <script src="./script/prefixfree.min.js"></script>
+
+    <!-- 제이쿼리 라이브러리 cdn방식-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> 
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <h1>
+            <a href="index.html" title="오랄비 바로가기">
+                <img src="./images/hd_logo.png" alt="로고">
+            </a>
+        </h1>
+        <nav>
+            <ul class="gnb">
+                <li><a href="#" title="iO시리즈 바로가기">iO시리즈</a></li>
+                <li><a href="#" title="케어 바로가기">케어</a></li>
+                <li><a href="#" title="혜택 바로가기">혜택</a></li>
+                <li><a href="#" title="FAQ 바로가기">FAQ</a></li>
+
+                <input type="text" value="검색" id="search">
+                <label for="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </ul>
+        </nav>
+
+
+        <!-- 원형내비게이션 -->
+            <ul class="lnb">
+                <li><div class="bar">&nbsp;</div><a href="#main_2">iO</a></li>
+                <li><div class="bar">&nbsp;</div><a href="#main_3">광고</a></li>
+                <li><div class="bar">&nbsp;</div><a href="#main_4">케어</a></li>
+                <li><div class="bar">&nbsp;</div><a href="#main_5">혜택</a></li>
+                <li><div class="bar">&nbsp;</div><a href="#main_6">FAQ</a></li>
+            </ul>
+            
+        
+    </header>
+    <!-- 5번 -->
+    <script>
+        const header01 = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            sPos = window.pageYOffset;
+            if(sPos>=70){
+                header01.className = 'headerUp';
+            }else{
+                header01.classList.remove='headerUp';
+                header01.className='headerDown';
+            }
+
+        });
+
+
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                let sPos = $(window).scrollTop();
+
+                // 스크롤 값에 맞게 lnb 색깔 바뀌기
+                $('.lnb').hide();
+                if(sPos>700){
+                $('.lnb').show();
+                }else{
+                $('.lnb').hide();
+                }
+
+                // 스크롤 값에 맞게 파란색 원 바뀌기
+                if(sPos>700){
+                    $('.lnb>li').removeClass('lnb_act2');
+
+                    $('.lnb>li:first-child').addClass('lnb_act');
+
+                }
+               if(sPos>1700){
+                    $('.lnb>li').removeClass('lnb_act');
+
+                    $('.lnb>li:nth-child(2)').addClass('lnb_act2');
+                }
+                if(sPos>2600){
+                    $('.lnb>li').removeClass('lnb_act2');
+
+                    $('.lnb>li:nth-child(3)').addClass('lnb_act');
+                }
+                if(sPos>3600){
+                   $('.lnb>li').removeClass('lnb_act');
+
+                    $('.lnb>li:nth-child(4)').addClass('lnb_act2');
+                }
+                if(sPos>4500){
+                    $('.lnb>li').removeClass('lnb_act2');
+
+                    $('.lnb>li:last-child').addClass('lnb_act');
+                }
+
+            });
+        });
+    </script>
+
+
+
+    <!-- 메인 -->
+    <main>
+        <!-- 메인1 -->
+        <section class="main1_wrap">
+            <article class="main1">
+                <h2>메인 비디오</h2>
+                <video id="main1_bg" src="./images/main_vid.mp4" autoplay loop muted playsinline>
+                    <track kind="captions" src="./caption/main1_subtitle.vtt" srclang="ko" label="jejuvid" default>
+                    <strong> "이 브라우저는 video 태그를 지원하지 않습니다."</strong>
+                </video>
+                    <div class="main1_div">
+                        <p id="main1_txt1">집에서 경험하는</p>
+                        <p id="main1_txt2">프로페셔널한 케어</p>
+                        <div class="img_box" >
+                            <img id="main1_txt3" src="./images/hd_logo.png" alt="오랄비 iO로고">
+                        </div>   
+                    </div>
+                    <!-- 스크롤 -->
+                    <div class="scroll">
+                        <i class="fa-solid fa-computer-mouse"></i><br>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    
+            </article>
+        </section>
+
+        
+        <!-- 메인 1 글자 날라오기 스크립트 -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                let main1_txt1 = document.querySelector('#main1_txt1');
+
+                let main1_txt2 = document.querySelector('#main1_txt2');
+                
+                let main1_txt3 =document.querySelector('#main1_txt3');
+
+                let main1_bg = document.querySelector('#main1_bg');
+
+                let main1_scroll;
+
+
+                //윈도우에 스크롤이 생기면 할 일
+                window.addEventListener('scroll', ()=>{
+                    main1_scroll = window.pageYOffset;
+                    console.log(main1_scroll);
+
+                    if(main1_scroll > 20){
+                        main1_txt1.className = 'active1';//기존의 클래스를 모두 없애고 액티브 적용
+                    }else{
+                        main1_txt1.classList.remove = 'active1';
+                    }
+                    if(main1_scroll >70){
+                        main1_txt2.className = 'active1';
+                    }else{
+                        main1_txt2.classList.remove = 'active1';
+                    }
+                    if(main1_scroll> 80){
+                        main1_txt3.className = 'active1';
+                    }else{
+                        main1_txt3.classList.remove='active1'
+                    }
+                    
+                });
+            });
+
+            $(document).ready(function(){
+
+                function scrollDown(){
+                    $('.scroll').animate({'top':'82%'},1500).animate({'top':'80%'});
+                }
+                let Timer = setInterval(scrollDown,1000)
+            });
+    </script>
+
+
+        <!-- 메인 2 io 시리즈 소개 -->
+        <section class="main2" id="main_2">
+            <h2>iO 시리즈</h2>
+            <p>최신 iO 시리즈를 감상하세요</p>
+            <article class="main3_tab-content">
+                    <h3>iO series</h3>
+                    <div class="tab_wrapper">
+                        <div class="tab_nav">
+                            <span class="power">
+                                <i class="fa-solid fa-power-off"></i>
+                            </span>
+                            <ul class="tab_menu">
+                                <li class="io_act"><a href="#tab-1">i09</a></li>
+                                <li><a href="#tab-2">i08</a></li>
+                                <li><a href="#tab-3">i07</a></li>
+                                <li><a href="#tab-4">i06</a></li>
+                            </ul>
+                            
+                        </div>
+    
+                        <div id="tab-content">
+                            <ul id="tab-1">
+                                <li>
+                                    <img src="./images/main3_01.png" alt="io09">
+                                </li>
+                                <li>
+                                    <div class="io_right">
+                                        <p>오랄비 iO9 전동칫솔 블랙 오닉스</p>
+                                        <ul class="io_intro">
+                                            <li>스마트 세정모드 <p>7가지</p></li>
+                                            <li>Ai 실시간 코칭 <p>3D 치아 탐색</p> </li>
+                                            <li>양치인식구역<p>16구역</p></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul id="tab-2">
+                                <li>
+                                    <img src="./images/main3_02.png" alt="io08">
+                                </li>
+                                <li>
+                                    <div class="io_right">
+                                        <p>오랄비 iO8 전동칫솔 바이올렛 아메트린</p>
+                                        <ul class="io_intro">
+                                            <li>스마트 세정모드 <p>6가지</p></li>
+                                            <li>Ai 실시간 코칭  <p>일반 탐색</p></li>
+                                            <li>양치인식구역 <p>6구역</p></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul id="tab-3">
+                                <li>
+                                    <img src="./images/main3_03.png" alt="io07">
+                                </li>
+                                <li>
+                                    <div class="io_right">
+                                        <p>오랄비 iO7 전동칫솔 화이트 알라바스터</p>
+                                        <ul class="io_intro">
+                                            <li>스마트 세정모드 <p>5가지</p></li>
+                                            <li>Ai 실시간 코칭 <p>일반 탐색</p></li>
+                                            <li>양치인식구역 <p>6구역</p></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul id="tab-4">
+                                <li>
+                                    <img src="./images/main3_04.png" alt="io06">
+                                </li>
+                                <li>
+                                    <div class="io_right">
+                                        <p>오랄비 iO6 전동칫솔 그레이 오팔</p>
+                                        <ul class="io_intro">
+                                            <li>스마트 세정모드<p>4가지</p></li>
+                                            <li>Ai 실시간 코칭<p>일반 탐색</p></li>
+                                            <li>양치인식구역<p>6구역</p></li>
+                                        </ul>
+                                    </div><!--io_right end-->
+                                </li>
+                            </ul>
+                        </div><!--tab-content end-->
+                    </div><!--tab_wrapper end-->
+            </article>
+        </section>        
+            <!-- 메인2 탭컨텐츠 스크립트 -->
+            <script>
+            const tabMenu = document.querySelectorAll('.tab_menu > li');
+            const tabContent = document.querySelectorAll('#tab-content > ul');
+            const power = document.querySelector('.power');
+
+            //iO9를 클릭했을 때, 모든 div들이 안보인 뒤에, 선택한 것만 보이게 하기
+            //showContent함수
+            function showContent(num){
+                tabContent.forEach(function(tab_txt){//탭컨텐트의 div를 tab_txt로,,,
+                    tab_txt.style.display = 'none';
+                });
+                tabContent[num].style.display = 'block';
+            }
+            //맨 첫번째 iO9만 보이게 하기
+            showContent(0);
+
+
+            //iO9글자 클릭이벤트 걸기(반복문)
+            tabMenu.forEach(function(tab_txt, idx){
+                tab_txt.addEventListener('click', function(e){//e=매개변수
+                    e.preventDefault();//a링크의 기본 기능 막기
+                    showContent(idx);
+                    movePower(idx); 
+                });
+            });
+
+            //power 움직이는 함수
+            function movePower(num){//숫자가 들어오면
+                let newLeft = tabMenu[num].offsetLeft;
+                let newWidth = tabMenu[num].offsetWidth;
+                console.log(newLeft, newWidth);
+
+                power.style.left = newLeft + 'px';
+                power.style.width = newWidth +'px';
+            }
+
+
+            // iO글자 굵게하기
+            $(document).ready(function(){
+                $('.tab_menu>li').click(function(){
+                    $(this).siblings().removeClass('io_act');
+                    $(this).addClass('io_act');
+                    
+                });
+            });
+            </script> 
+
+
+
+
+        <!-- 메인 3 프로패셔널 -->
+        <article class="main3" id="main_3">
+            <h2>프로페셔널</h2>
+            <img src="./images/main2_vid.gif" alt="메인3 배경">
+            <div class="main3_div">
+                <p id="main3_txt1">유니크한 <span>원형칫솔모</span>와<br><span>마이크로 진동모션</span>으로</p>
+                <p id="main3_txt2">플라그를 <span>99.7%</span> 더 제거</p>
+                    
+            </div>
+        </article>
+
+
+        <!-- 메인3 글자 날라오기 스크립트-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                let main3_txt1 = document.querySelector('#main3_txt1');
+
+                let main3_txt2 = document.querySelector('#main3_txt2');
+                
+                let main3_txt3 =document.querySelector('#main3_txt3');
+
+                let main3_bg = document.querySelector('#main3_bg');
+
+                let main3_scroll;
+
+
+                //윈도우에 스크롤이 생기면 할 일
+                window.addEventListener('scroll', ()=>{
+                    main3_scroll = window.pageYOffset;
+                    console.log(main3_scroll);
+
+                    if(main3_scroll > 1452){
+                        main3_txt1.className = 'active';//기존의 클래스를 모두 없애고 액티브 적용
+                    }else{
+                        main3_txt1.classList.remove = 'active';
+                    }
+                    if(main3_scroll >1752){
+                        main3_txt2.className = 'active';
+                    }else{
+                        main3_txt2.classList.remove = 'active';
+                    }
+                });
+            });
+    </script>
+    
+
+
+    <!-- 메인 4 -->
+    <article class="main4" id="main_4">
+        <h2>오랄-비 iO 스페셜 케어</h2>
+        <p>최상의 구강케어를 경험해보세요</p>
+        <ul class="main4_box">
+            <li>
+                <p class="box_title">대화형 컬러 디스플레이</p>
+                <img src="./images/main4_01.png" alt="컬러디스플레이">
+                <p class="box_p">구강상태에 따른 7가지 맞춤형 스마트 케어!<br>
+                    칫솔모 교체 시기, 배터리 잔량을 알려주는 실시간 맞춤형 코칭</p>
+            </li>
+            <li>
+                <p class="box_title">AI 3D 치아 탐색기능</p>
+                <img src="./images/main4_02.png" alt="컬러디스플레이">
+                <p class="box_p">입 안의 16개 구역을 모니터링하는 인공지능의 3D 트래킹 기능과<br>
+                    오랄비 블루투스 앱을 통한 구석구석 완벽한 세정</p>
+            </li>
+            <li>
+                <p class="box_title">스마트 압력 센서</p>
+                <img src="./images/main4_03.png" alt="컬러디스플레이">
+                <p class="box_p">최상의 세정력과 잇몸 보호를 위해<br>
+                    3가지 컬러 신호로 안내해 주는 가장 알맞은 칫솔질 압력</p>
+            </li>
+            <li>
+                <p class="box_title">마그네틱 충전 스테이션</p>
+                <img src="./images/main4_04.png" alt="컬러디스플레이">
+                <p class="box_p">자석 충전기로  안정적으로 고정되며 3시간만으로<br>
+                    빠르게 고속충전! (완충시 12일간 지속 사용 가능)</p>
+            </li>
+        </ul>
+    </article>
+
+
+
+    <!-- 메인 5 -->
+    <section class="main5" id="main_5">
+        <h2>오랄-비만의 혜택</h2>
+        <article>
+            <h3>오랄-비만의 혜택</h3>
+            <div class="main5_box">
+                <p>제품보증연장으로 더욱 확실하게 즐기세요</p>
+                <img src="./images/main5_img.jpg" alt="제품보증연장">
+                <a href="#" title="제품 등록 및 보증 연장하기">제품 등록 및 보증 연장하기</a>
+            </div>
+        </article>
+        
+    </section>
+
+
+    <!-- 메인 6 -->
+        <section class="main6" id="main_6">
+            <h2>자주하는 질문</h2>
+            
+            <div class="ex1 active">
+                <div class="ex1-title">
+                    <p>Q. 오랄-비 iO 전동칫솔을 사용해야하는 이유는 무엇인가요?</p>
+                </div>
+                <div class="ex1-body" id="thisone">
+                    <p>오랄-비의 유니크한 원형칫솔모와 새로운 마이크로 진동모션이 플라그를 초대 99.7% 더 제거하며<br>플라그를 예방해구때문에 올바른 양치를 할 수 있습니다.</p>
+                </div>
+            </div>
+            <div class="ex1">
+                <div class="ex1-title">
+                    <p>Q. 전동 칫솔모끼리 호환 가능한가요?</p>
+                </div>
+                <div class="ex1-body">
+                    <p>iO시리즈 전동칫솔은 얼티밋 클린 / 젠틀 케어 리필모와 호환 가능합니다. <br>iO 시리즈를 제외한 모든 전동칫솔은 초미세요 / 크로스 액션 / 프리시즌 클린 / 3D 화이트 / 퓨어클린 차콜 <br>리필모와 호환 가능합니다.</p>
+                </div>
+            </div>
+            <div class="ex1">
+                <div class="ex1-title">
+                    <p>Q. 오랄-비 iO 전동칫솔은 방수가 되나요?</p>
+                </div>
+                <div class="ex1-body">
+                    <p>오랄비 전동칫솔은 생활방수 제품이며, 짧은 시간동안 흐르는 물에 제품을 세척할 수 있는<br>수준으로 방수 설계가 되어있습니다. 따라서 오랜시간 담그면 방수 기능이 저하될 수 있습니다.</p>
+                </div>
+            </div>
+            <div class="ex1">
+                <div class="ex1-title">
+                    <p>Q. 오랄-비 iO 전동칫솔 리필모 교체 주기가 어떻게 되나요?</p>
+                </div>
+                <div class="ex1-body">
+                    <p>오랄비 전동칫솔모에는 칫솔모의 교체시기를 알려주는 파란색 인디케이터 칫솔모가 있습니다.<br>칫솔모의 파란색 부분이 반정도 없어질 때쯤 칫솔모를 교체해주시면 됩니다.</p>
+                </div>
+            </div>
+            <div class="ex1">
+                <div class="ex1-title">
+                    <p>Q. 전동칫솔 핸들을 충전기에 오래 올려 놓아도 되나요?</p>
+                </div>
+                <div class="ex1-body">
+                    <p>오랄비 전동칫솔 제품의 충전 완료시간은 최소 24시간이 걸리며, 전동칫솔을 사용하지 <br>않을 때 충전기에 올려놓으셔도 무방합니다. 충전이 완료된 후에 충전기는 콘센트에서<br>최소한의 에너지만 공급받습니다.</p>
+                </div>
+            </div>
+        </section>
+        <script>
+            let ex1 = document.querySelectorAll('.ex1');
+            for(var ex of ex1){//ex마다 할 일
+                ex.addEventListener('click', function(){
+                    hideAll();//모두 숨기기
+                    this.classList.add('active');//클래스 추가
+
+                });
+            }
+            function hideAll(){//하이드 함수가 할 일
+                for(q of ex1){
+                    q.classList.remove('active');//모두 안보이게
+                }
+            }
+        </script>
+    </main>
+
+
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="f_top">
+            <nav class="f_lnb">
+                <ul>
+                    <li><a href="#" title="이용약관">이용약관</a></li>
+                    <li><a href="#" title="개인정보처리방침">개인정보처리방침</a></li>
+                    <li><a href="#" title="고객문의">고객문의</a></li>
+                    <li><a href="#" title="더알아보기">더알아보기</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="f_bottom">
+            <h3>
+                <a href="index.html" title="메인페이지 이동">
+                    <img src="./images/ft_logo.png" alt="하단로고">
+                </a>
+            </h3>
+            <address>
+                <ul>
+                    <li>서울특별시 영등포구 국제금융로 10(서울 국제금융 센터) Three동 37층</li>
+                    <li>통신판매업번호 : 2019-서울 영등포-1637</li>
+                    <li>대표자 : 이지영 / 고객센터 : 070-8618-0616 </li>
+                    <li>© 2023 Procter & Gamble</li>
+                </ul>
+            </address>
+            <ul class="sns">
+                <li><a href="#" title="페이스북 바로가기"><img src="./images/sns_1.jpg" alt="페이스북"></a></li>
+                <li><a href="#" title="인스타 바로가기"><img src="./images/sns_2.jpg" alt="인스타"></a></li>
+                <li><a href="#" title="유튜브 바로가기"><img src="./images/sns_3.jpg" alt="유튜브"></a></li>
+            </ul>
+            
+
+        </div>
+        
+        
+
+    </footer>
+</body>
+</html>
