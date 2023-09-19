@@ -41,11 +41,16 @@ h1 img{
 .gnb>li>a{
     color: #fff;
 }
+fieldset>legend{
+    display: none;
+}
+fieldset span{
+    display: none;
+}
 #search{
-    margin-top: 22px;
     height: 20px;
 }
-i.fa-magnifying-glass{
+.fa-search{
     padding-top: 30px;
     padding-right: 30px;
     color: #fff;
@@ -92,10 +97,10 @@ i.fa-magnifying-glass{
 }
 
 .lnb_act{
-    background: conic-gradient(#bf17f9 0% 25%, transparent 25% 50%, #4293EC 50% 75%, transparent 75% 100%);
+    background-image: conic-gradient(transparent 0deg, #bf17f9 45deg, transparent 90deg, #4293EC 135deg, transparent 180deg,#bf17f9 225deg, transparent 270deg, #4293EC 315deg, transparent 360deg);
 }
 .lnb_act2{
-    background: conic-gradient(transparent 0% 25%, #bf17f9 25% 50%,  transparent 50% 75%, #4293EC 75% 100%);
+    background-image: conic-gradient(#4293EC 0deg, transparent 45deg, #bf17f9 90deg, transparent 135deg, #4293EC 180deg, transparent 225deg, #bf17f9 270deg, transparent 315deg, #4293EC 360deg);
 }
 
 

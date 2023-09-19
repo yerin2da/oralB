@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <title>오랄비</title>
     <!-- 초기화 -->
     <link rel="stylesheet" href="./css/reset.css" type="text/css">
@@ -36,11 +37,16 @@
                 <li><a href="#" title="케어 바로가기">케어</a></li>
                 <li><a href="#" title="혜택 바로가기">혜택</a></li>
                 <li><a href="#" title="FAQ 바로가기">FAQ</a></li>
-
-                <input type="text" value="검색" id="search">
-                <label for="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </label>
+                <li>
+                <fieldset>
+                    <legend>검색폼</legend>
+                        <input type="text" id="search" placeholder="검색" maxlength="50">
+                        <label for="search" class="fas fa-search">
+                            <span>검색버튼</span>
+                        </label>                
+                </fieldset>
+                    
+                </li>
             </ul>
         </nav>
 
