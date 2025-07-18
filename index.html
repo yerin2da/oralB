@@ -23,9 +23,9 @@
     <!-- 제이쿼리 라이브러리 cdn방식-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> 
 </head>
-<body>
+<body class="">
     <!-- 헤더 -->
-    <header>
+    <header class="max-w min-w-1920">
         <h1>
             <a href="index.html" title="오랄비 바로가기">
                 <img src="./images/hd_logo.png" alt="로고">
@@ -127,7 +127,7 @@
     <!-- 메인 -->
     <main>
         <!-- 메인1 -->
-        <section class="main1_wrap">
+        <section class="main1_wrap max-w min-w-1920">
             <article class="main1">
                 <h2>메인 비디오</h2>
                 <video id="main1_bg" src="./images/main_vid.mp4" autoplay loop muted playsinline>
@@ -139,25 +139,25 @@
                         <p id="main1_txt2">프로페셔널한 케어</p>
                         <div class="img_box" >
                             <img id="main1_txt3" src="./images/hd_logo.png" alt="오랄비 iO로고">
-                        </div>   
+                        </div>
                     </div>
                     <!-- 스크롤 -->
                     <div class="scroll">
                         <i class="fa-solid fa-computer-mouse"></i><br>
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    
+
             </article>
         </section>
 
-        
+
         <!-- 메인 1 글자 날라오기 스크립트 -->
         <script>
             document.addEventListener('DOMContentLoaded', function(){
                 let main1_txt1 = document.querySelector('#main1_txt1');
 
                 let main1_txt2 = document.querySelector('#main1_txt2');
-                
+
                 let main1_txt3 =document.querySelector('#main1_txt3');
 
                 let main1_bg = document.querySelector('#main1_bg');
@@ -185,7 +185,7 @@
                     }else{
                         main1_txt3.classList.remove='active1'
                     }
-                    
+
                 });
             });
 
@@ -200,7 +200,7 @@
 
 
         <!-- 메인 2 io 시리즈 소개 -->
-        <section class="main2" id="main_2">
+        <section class="main2 max-w min-w-1920">" id="main_2">
             <h2>iO 시리즈</h2>
             <p>최신 iO 시리즈를 감상하세요</p>
             <article class="main3_tab-content">
@@ -339,7 +339,7 @@
 
 
         <!-- 메인 3 프로패셔널 -->
-        <article class="main3" id="main_3">
+        <article class="main3 max-w min-w-1920" id="main_3">
             <h2>프로페셔널</h2>
             <img src="./images/main2_vid.gif" alt="메인3 배경">
             <div class="main3_div">
@@ -386,7 +386,7 @@
 
 
     <!-- 메인 4 -->
-    <article class="main4" id="main_4">
+    <article class="main4 max-w min-w-1920" id="main_4">
         <h2>오랄-비 iO 스페셜 케어</h2>
         <p>최상의 구강케어를 경험해보세요</p>
         <ul class="main4_box">
@@ -420,12 +420,12 @@
 
 
     <!-- 메인 5 -->
-    <section class="main5" id="main_5">
-        <h2>오랄-비만의 혜택</h2>
+    <section class="main5 max-w min-w-1920" id="main_5">
+        <h2>Oral-B만의 혜택</h2>
         <article>
-            <h3>오랄-비만의 혜택</h3>
+            <h3>Oral-B만의 혜택</h3>
+            <p>제품보증연장으로 더욱 확실하게 즐기세요</p>
             <div class="main5_box">
-                <p>제품보증연장으로 더욱 확실하게 즐기세요</p>
                 <img src="./images/main5_img.jpg" alt="제품보증연장">
                 <a href="#" title="제품 등록 및 보증 연장하기">제품 등록 및 보증 연장하기</a>
             </div>
@@ -435,7 +435,7 @@
 
 
     <!-- 메인 6 -->
-        <section class="main6" id="main_6">
+        <section class="main6 max-w min-w-1920" id="main_6">
             <h2>자주하는 질문</h2>
             
             <div class="ex1 active">
@@ -499,7 +499,7 @@
 
 
     <!-- 푸터 -->
-    <footer>
+    <footer class="py-10 max-w min-w-1920">
         <div class="f_top">
             <nav class="f_lnb">
                 <ul>
@@ -521,7 +521,7 @@
                     <li>서울특별시 영등포구 국제금융로 10(서울 국제금융 센터) Three동 37층</li>
                     <li>통신판매업번호 : 2019-서울 영등포-1637</li>
                     <li>대표자 : 이지영 / 고객센터 : 070-8618-0616 </li>
-                    <li>© 2023 Procter & Gamble</li>
+                    <li>© 2025 Procter & Gamble</li>
                 </ul>
             </address>
             <ul class="sns">
