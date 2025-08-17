@@ -104,11 +104,10 @@ fieldset span{
 }
 
 
-
-
-
-
-
+section{
+    min-width: 1600px;
+    max-width: 2560px;
+}
 
 
 /* 메인서식 */
@@ -116,10 +115,11 @@ fieldset span{
 /* 메인1 */
 main{}
 .main1_wrap{
-    position: relative;
+    /*position: relative;*/
     top: 70px;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: 1000px;
+    /*height: calc(100vh - 70px);*/
     overflow: hidden;
 }
 .main1{
@@ -138,7 +138,7 @@ main{}
     line-height: 50px;
     position: absolute;
     left: 70%;
-    top: 40%;
+    top: 45%;
     color: #fff;
     
 }
@@ -184,11 +184,12 @@ main{}
 
 /* 메인 2 iO 시리즈 */
 .main2{
+    padding: 80px 0;
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     position: relative;
 }
-.main2>h2{
+.main2 article{
     padding-top: 150px !important;
 }
 h2{
@@ -204,7 +205,7 @@ h2{
 }
 .main3_tab-content{
     width: 1200px;
-    position: absolute;top: 65%;left: 50%; transform: translate(-50%, -50%);
+    /*position: absolute;top: 65%;left: 50%; transform: translate(-50%, -50%);*/
 }
 
 .power{ 
@@ -312,7 +313,10 @@ h2{
 
 /* 메인 3 */
 .main3{
-    width: 100%;height: 100vh;
+    width: 1600px;
+    min-width: 1600px;
+    max-width: 2560px;
+    height: 600px;
     position: relative;
     overflow: hidden;
 }
@@ -374,23 +378,28 @@ h2{
 
 /* 메인4 오랄비 스페셜 케어 */
 .main4{
-    width: 1200px;height: 100vh;
+    width: 1600px;
+    min-width: 1600px;
+    max-width: 2560px;
+    height: fit-content;
     margin: 0px auto;
-    padding-bottom: 50px;
+    padding: 80px 0;
 }
 .main4>h2{
-    padding-top: 100px !important;
 }
 .main4>p{
     padding-top: 20px;
     padding-bottom: 80px !important;
 }
 .main4_box{
-    display: flex;
-    flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2열 */
+        grid-template-rows: repeat(2, auto);   /* 2행 */
+        gap: 20px; /* 간격 */
+
 }
 .main4_box>li{
-    width: 50%;
+    /*width: 50%;*/
     text-align: center;
 }
 .main4_box>li:hover img{
@@ -404,19 +413,18 @@ h2{
 .main4_box .box_p{
     line-height: 25px;
     font-size: 16px;
-    padding-bottom: 70px;
 }
 .main4_box>li>img{
     width: 155px;
 }
 .main4 p{
-    padding-bottom: 30px;
 }
 
 
 /* 메인5 제품보증연장하기 */
 .main5{
-    width: 100%;height: 100vh;
+    width: 100%;
+    height: 500px;
     background: #03559E;
     position: relative;
     color: #fff;
@@ -474,14 +482,16 @@ h2{
 }
 
 .main6{
-    width: 100%;height: 100vh;
+    width: 100%;
+    height: fit-content;
+    padding: 80px 0;
 }
 .main6>h2{
     color: #000;
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    padding:100px 0px
+    padding-bottom: 80px;
 }
 
 .ex1{
@@ -519,6 +529,8 @@ h2{
 footer{
     background: #070F2A;
     color: #fff;
+    min-width: 1600px;
+    max-width: 2560px;
 }
 .f_top{
     width: 1200px;
